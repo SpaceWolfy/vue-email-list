@@ -2,6 +2,7 @@ new Vue({
   el: "#app",
   data: {
     emailList: [],
+    selected: undefined,
   },
   methods: {
     newMail: function () {
