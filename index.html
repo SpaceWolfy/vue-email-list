@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API - Prima lezione</title>
+    <title>G(eneric)Mail</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
     <!-- Axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <!-- Vue -->
@@ -17,7 +19,25 @@
     <!-- 1.5: compilazione del codice in Vue -->
     <!-- 2: Stampo -->
     <div id="app">
-      <div v-for="email in emailList">{{email}}</div>
+      <div class="mail-box">
+        <header class="head-mail">
+          <h1><span>G</span>eneric<span>M</span>ail</h1>
+          <div class="n-unread-mail">
+            Scegli una delle <strong>{{emailList.length + 1}}</strong> mail
+            randomiche per camuffare la <span>tua</span> identità
+          </div>
+        </header>
+        <ul>
+          <li
+            class="mail-row"
+            v-for="(email, index) in emailList"
+            @click="selected=index"
+            :class="{highlight:selected == index}"
+          >
+            {{email}}
+          </li>
+        </ul>
+      </div>
     </div>
     <script src="vue/vue.js"></script>
   </body>
