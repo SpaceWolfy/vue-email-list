@@ -15,7 +15,7 @@ new Vue({
       }
     },
   },
-  mounted() {
+  beforeMount() {
     this.newMail();
   },
 });
